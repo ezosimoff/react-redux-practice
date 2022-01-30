@@ -4,12 +4,10 @@ import Sortfilter from './SortFilter';
 
 const Controls = () => {
 	return (
-		<>
-			<div className='content__top'>
-				<Catsfilter />
-				<Sortfilter items={['популярности', 'цене', 'алфавиту']} />
-			</div>
-		</>
+		<div className='content__top'>
+			<Catsfilter />
+			<Sortfilter items={['популярности', 'цене', 'алфавиту']} />
+		</div>
 	);
 };
 
