@@ -19,6 +19,9 @@ const Sortfilter = ({ items }) => {
 		document.body.addEventListener('click', (e) => {
 			if (!e.path.includes(sortRef.current)) setIsOpen(false);
 		}); // only <body> node
+		return () => {
+			document.body.removeEventListener('click')
+		} 
 	}, []);
 
 	return (

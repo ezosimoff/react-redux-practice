@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 
-const Catsfilter = () => {
+const CatsFilter = () => {
 	const [active, setActive] = React.useState(0);
 	const [categories, setCategories] = React.useState(null);
 
@@ -18,7 +18,7 @@ const Catsfilter = () => {
 		<div className='categories'>
 			<ul>
 				<li
-					className={ active === 0 ? 'active' : ''}
+					className={active === 0 ? 'active' : ''}
 					onClick={() => handleClick(0)}
 				>
 					Все
@@ -26,8 +26,8 @@ const Catsfilter = () => {
 				{categories &&
 					categories.map((el, index) => (
 						<li
-							className={index+1 === active ? 'active' : ''}
-							onClick={() => handleClick(index+1)}
+							className={index + 1 === active ? 'active' : ''}
+							onClick={() => handleClick(index + 1)}
 							key={Math.random()}
 						>
 							{el}
@@ -38,4 +38,4 @@ const Catsfilter = () => {
 	);
 };
 
-export default Catsfilter;
+export default CatsFilter;
