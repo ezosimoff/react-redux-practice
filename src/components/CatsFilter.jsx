@@ -1,8 +1,13 @@
 import React from 'react';
-import classNames from 'classnames';
-import { pizzas } from '../db';
 
-const cats = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
+const cats = [
+	'Все',
+	'Мясные',
+	'Вегетарианская',
+	'Гриль',
+	'Острые',
+	'Закрытые',
+];
 
 const Catsfilter = () => {
 	const [active, setActive] = React.useState(0);
