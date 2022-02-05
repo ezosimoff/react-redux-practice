@@ -9,7 +9,7 @@ const MainPage = () => {
 
 	React.useEffect(() => {
 		axios.get('http://localhost:3000/db.json').then(({ data }) => {
-			setItems(data.pizzas);
+			setItems(data.items);
 		});
 	}, []);
 
