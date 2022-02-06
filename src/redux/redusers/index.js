@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import fetchReducer from './fetchReducer';
-import sortReducer from './sortReducer';
+import catsReducer from './catsReducer';
 
 const rootReducer = combineReducers({
+	catsReducer,
 	fetchReducer,
-	sortReducer,
 });
 
 export default rootReducer

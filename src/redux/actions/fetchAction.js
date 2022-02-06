@@ -1,4 +1,4 @@
-export const fetchAction = (payload) => ({
+export const fetchItemsAction = () => ({
 	type: 'GET_ITEMS',
-	payload,
+	request: 'http://localhost:3001/items',
 });

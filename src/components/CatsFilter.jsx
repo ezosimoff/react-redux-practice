@@ -1,36 +1,30 @@
-import axios from 'axios';
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSortByCats } from '../redux/actions/sortActions';
 
 const CatsFilter = () => {
-	const [active, setActive] = React.useState(0);
-	const [categories, setCategories] = React.useState(null);
+	const dispactch = useDispatch();
 
-	React.useEffect(() => {
-		axios.get('http://localhost:3000/db.json').then(({ data }) => {
-			setCategories(data.categories);
-		});
-	}, []);
+	const data = useSelector(({ catsReducer }) => ({
+		active: catsReducer.active,
+		categories: catsReducer.itemsCats
+	}));
 
 	const handleClick = (index) => {
-		setActive(index);
+		dispactch(setSortByCats(index));
 	};
+
 	return (
 		<div className='categories'>
 			<ul>
-				<li
-					className={active === 0 ? 'active' : ''}
-					onClick={() => handleClick(0)}
-				>
-					Все
-				</li>
-				{categories &&
-					categories.map((el, index) => (
+				{data.categories &&
+					data.categories.map((el, index) => (
 						<li
-							className={index + 1 === active ? 'active' : ''}
-							onClick={() => handleClick(index + 1)}
-							key={el}
+							className={index === data.active ? 'active' : ''}
+							onClick={() => handleClick(index)}
+							key={el.name}
 						>
-							{el}
+							{el.name}
 						</li>
 					))}
 			</ul>

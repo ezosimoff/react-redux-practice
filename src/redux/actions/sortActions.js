@@ -8,4 +8,8 @@ export const setSortByCats = (payload) => ({
 	payload,
 });
 
+export const fetchCatsAction = () => ({
+	type: 'GET_CATEGORIES',
+	request: 'http://localhost:3001/categories',
+});
 

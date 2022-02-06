@@ -25,6 +25,7 @@ const Sortfilter = ({ items }) => {
 			document.body.removeEventListener('click', outsideClickListener);
 		};
 	}, []);
+	console.log('render filter');
 
 	return (
 		<div className='sort' ref={sortRef}>
