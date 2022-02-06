@@ -28,7 +28,7 @@ const CatsFilter = () => {
 						<li
 							className={index + 1 === active ? 'active' : ''}
 							onClick={() => handleClick(index + 1)}
-							key={Math.random()}
+							key={el}
 						>
 							{el}
 						</li>

@@ -37,7 +37,7 @@ const Item = ({
 				<ul>
 					{sizes.map((el, i) => (
 						<li
-							key={Math.random()}
+							key={el}
 							onClick={() => setActiveSize(i)}
 							className={classNames({
 								active: activeSize === i,

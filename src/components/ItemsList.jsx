@@ -5,7 +5,7 @@ const Itemslist = ({ items }) => {
 	return (
 		<div className='content__items'>
 			{items.map((el) => (
-				<Item key={Math.random()} {...el} />
+				<Item key={el.name} {...el} />
 			))}
 		</div>
 	);

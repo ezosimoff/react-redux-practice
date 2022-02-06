@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import Controls from '../components/Controls';
 import Header from '../components/Header';
 import Itemslist from '../components/ItemsList';
+
 
 const MainPage = () => {
 	const [items, setItems] = React.useState(null);

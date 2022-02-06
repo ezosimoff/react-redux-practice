@@ -15,13 +15,15 @@ const Sortfilter = ({ items }) => {
 		setIsOpen(false);
 	};
 
+	const outsideClickListener = (e) => {
+		if (!e.path.includes(sortRef.current)) setIsOpen(false);
+	};
+
 	React.useEffect(() => {
-		document.body.addEventListener('click', (e) => {
-			if (!e.path.includes(sortRef.current)) setIsOpen(false);
-		}); // only <body> node
+		document.body.addEventListener('click', (e) => outsideClickListener(e)); // only <body> node
 		return () => {
-			document.body.removeEventListener('click')
-		} 
+			document.body.removeEventListener('click', outsideClickListener);
+		};
 	}, []);
 
 	return (
@@ -36,7 +38,7 @@ const Sortfilter = ({ items }) => {
 					<ul>
 						{items.map((el, i) => (
 							<li
-								key={Math.random()}
+								key={el}
 								className={i === activeItem ? 'active' : ''}
 								onClick={() => handleSelect(i)}
 							>
