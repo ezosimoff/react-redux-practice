@@ -1,14 +1,7 @@
-import {createStore} from 'redux';
+import { createStore } from 'redux';
+import rootReducer  from './redusers';
 
-function fetchReduser(state = { value: 0 }, action) {
-    switch (action.type) {
-      case 'GET_ITEMS':
-        return { value: state.value + 1 }
-      case 'GET_CATS':
-        return { value: state.value - 1 }
-      default:
-        return state
-    }
-}
-
-export const store = createStore(fetchReduser)
+export const store = createStore(
+	rootReducer,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
